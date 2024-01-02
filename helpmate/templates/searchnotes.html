@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    td:hover
+    {
+    color:#99ff33;
+    background-color:black;
+    }
+</style>
+{% if q %}
+<center>
+    <div>
+    <h4 class="text-danger">You have searched for {{q}}</h4>
+    </div>
+</center>
+{% endif %}
+
+
+<div class="container-fluid">
+    {% if q %}
+    <h4>You can download the notes here</h4>
+            <table class="table table-bordered" style="margin-bottom:100px;">
+                <tr>
+                    <th>Subject</th>
+                    <th>Year</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    {% for i in n %}
+                    <td>{{i.subject}}</td>
+                    <td>{{i.year}}</td>
+                    <td><a href="{{i.pdf.url}}">{{i.type}}</a></td>
+                </tr>
+                {% empty %}
+                <h6 class="text-center">no results found</h6>
+
+                     {% endfor %}
+            </table>
+{% endif %}
+
+
+
+    {% if q %}
+ <h4>You can download the questionpapers here</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Subject</th>
+        <th>Year</th>
+        <th>Question Papers</th>
+        <th>QuestionPaper Year</th>
+    </tr>
+    <tr>
+        {% for i in searchquestionpapers %}
+        <td>{{i.subject}}</td>
+        <td>{{i.year}}</td>
+        <td><a href="{{i.pdf.url}}">{{i.type}}</a></td>
+        <td>{{i.yearofexamination}}</td>
+    </tr>
+                    {% empty %}
+                <h6 class="text-center">no results found</h6>
+    {% endfor %}
+
+</table>
+{% endif %}
+
+</div>
+{% endblock %}

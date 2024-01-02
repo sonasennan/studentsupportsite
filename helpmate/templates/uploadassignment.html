@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+    <div class="container">
+<form method="POST" style="margin-bottom:100px;padding:100px;margin-top:50px;">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Name:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name" name="n">
+</div>
+
+
+
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Upload your file:</label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" name="f">
+</div>
+
+    <input type="submit" class="form-control" id="s">
+</form>
+        </div>
+    </center>
+{% endblock %}

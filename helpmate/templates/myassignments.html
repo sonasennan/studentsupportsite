@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for i in a %}
+<h5>{{i.studentname}}</h5>
+<div class="card border-success m-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success fw-bolder text-danger">{{i.subject}}</div>
+    <div class="card-header bg-transparent border-success"><a class="btn btn-dark" href="{% url 'assignment:edit' i.id %}">Edit</a></div>
+</div>
+{% endfor %}
+{% endblock %}

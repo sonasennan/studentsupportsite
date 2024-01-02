@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .animation
+     {
+  width: 100px;
+  height: 75px;
+  display: inline;
+  position: relative;
+  animation: mymovex 18s infinite;
+  animation-timing-function: linear;
+    }
+
+@keyframes mymovex {
+  from {left: 1px;}
+  to {left: 1550px;}
+}
+
+</style>
+<br>
+<br>
+<br>
+
+<div class="animation"><h3 class="text-danger">WELCOME {{user.username}}</h3></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6" style="background-color:yellow;"><a href="{% url 'students:getnotes' 2 %}">Click here for Notes</a></div>
+        <div class="col-sm-6" style="background-color:black;"><a href="{% url 'students:getquestionpapers' 2 %}">Click here for previous year question papers</a></div>
+    </div>
+</div>
+{% endblock %}

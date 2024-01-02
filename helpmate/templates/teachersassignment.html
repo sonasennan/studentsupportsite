@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for i in t %}
+<div class="card border-success m-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success fw-bolder text-danger">{{i.subject}}</div>
+    <div class="card-header bg-transparent border-success fw-bolder text-danger">Year: {{i.year}}</div>
+    <div class="card-header bg-transparent border-success"><a class="btn btn-dark" href="{% url 'assignment:deleteassignment' i.id %}">Delete</a></div>
+</div>
+    {% endfor %}
+{% endblock %}

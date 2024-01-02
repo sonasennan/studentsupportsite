@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--<style>-->
+<!--    div:hover-->
+<!--    {-->
+<!--    background-color:black;-->
+<!--    color:white;-->
+<!--    }-->
+
+<!--    input:hover-->
+<!--    {-->
+<!--    background-color:#ffffcc;-->
+<!--    }-->
+<!--</style>-->
+<center><h5>You may upload your notes here</h5></center>
+
+<div class="container m-5 p-3">
+<form method="POST" enctype="multipart/form-data" style="margin-bottom:100px;padding:100px;">
+  {% csrf_token %}
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Subject:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter subject name" name="s">
+</div>
+
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Upload Notes:</label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" name="f">
+</div>
+
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Year:</label>
+  <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter either 1 or 2 or 3" name="y">
+</div>
+
+
+    Type of file:<div class="form-check">
+  <input class="form-check-input" type="radio" name="t" id="flexRadioDefault1" value="notes">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Notes
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="t" value="questionpapers" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Questionpapers
+  </label>
+</div>
+
+    <input type="submit" class="form-control" id="s">
+
+</form>
+    </div>
+{% endblock %}

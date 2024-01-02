@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid m-5">
+    <div class="row">
+        {% for i in questions %}
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+  <div class="card-body" style="border:1px solid red;">
+    <h5 class="card-title text-warning">{{i.subject}}</h5>
+    <p class="card-text">Year of examination: {{i.yearofexamination}}</p>
+    <a href="{{i.pdf.url}}" class="btn btn-sm btn-info">Download</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

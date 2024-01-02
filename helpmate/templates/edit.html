@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h5>Edit your assignment here</h5><br><br>
+<center>
+<form method="POST" style="width:50%;" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered" style="width:50%;">
+    {{a.as_table}}
+</table>
+    <input type="submit" id="s">
+    </form>
+    </center>
+{% endblock %}

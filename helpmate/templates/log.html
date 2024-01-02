@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="height:200px;width:800px;background-color:gray;margin-top:100px;">
+<center><h3>Please do login for further use</h3></center>
+    <center><a class="btn btn-dark" href="{% url 'students:user_login' %}">Login</a></center>
+</div>
+{% endblock %}

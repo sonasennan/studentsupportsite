@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if user.is_teacher %}
+<center>
+    <div class="container">
+<form method="POST" style="margin:100px;padding:50px;">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Subject:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter subject" name="s">
+</div>
+
+        <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Year:</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter year" name="y">
+</div>
+
+    <input type="submit" class="form-control" id="s">
+</form>
+        </div>
+    </center>
+{% else %}
+<center><h2>This page is for teachers only</h2></center>
+{% endif %}
+{% endblock %}

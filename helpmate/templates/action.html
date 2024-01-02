@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+        .animation
+     {
+  width: 100px;
+  height: 75px;
+  display: inline;
+  position: relative;
+  animation: mymovex 18s infinite;
+  animation-timing-function: linear;
+    }
+
+@keyframes mymovex {
+  from {left: 1px;}
+  to {left: 1550px;}
+}
+
+
+</style>
+<div class="animation"><h3 class="text-danger fw-bolder">Hi {{user.username}}...Your notes has been submitted successfully</h3>
+        <img src="{% static 'images/hands.gif' %}" style="height:150px;width:100px;">
+</div>
+{% endblock %}
